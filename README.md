@@ -28,7 +28,7 @@ Com o terminal aberto digite o comando: npm i express  --save  (esse comando inc
 
 Agora você deve digitar em seu terminal: npm run dev (isso irá startar seu servidor para execução do projeto).
 
-Na extensão do Thunder Client,  importe o arquivo de thunder-collection_API_ToDoList.json
+Na extensão do Thunder Client,  importe o arquivo thunder-collection_API_ToDoList.json
 
 ## 📦 Desenvolvimento
 
