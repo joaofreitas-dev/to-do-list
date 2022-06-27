@@ -28,7 +28,6 @@ Com o terminal aberto digite o comando: npm i express  --save  (esse comando inc
 
 Agora você deve digitar em seu terminal: npm run dev (isso irá startar seu servidor para execução do projeto).
 
-```
 ## 📦 Desenvolvimento
 
 Foi desenvolvido um CRUD básico com os dados guardardos em memória.
