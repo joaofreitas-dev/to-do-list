@@ -1,0 +1,19 @@
+[
+  {
+    "tarefa": "Estudar",
+    "descricao": "Nulla sit amet urna id mi egestas fringilla. Duis ut faucibus felis, in malesuada velit. Nam sit amet lacus et enim tempor luctus vel in mauris.",
+    "duracao": "2 horas"
+  },
+
+  {
+    "tarefa": "Jogar video game",
+    "descricao": "Nulla sit amet urna id mi egestas fringilla. Duis ut faucibus felis, in malesuada velit. Nam sit amet lacus et enim tempor luctus vel in mauris.",
+    "duracao": "2 horas"
+  },
+
+  {
+    "tarefa": "Caminhar",
+    "descricao": "Nulla sit amet urna id mi egestas fringilla. Duis ut faucibus felis, in malesuada velit. Nam sit amet lacus et enim tempor luctus vel in mauris.",
+    "duracao": "1 hora e 30 minutos"
+  }
+]

@@ -1,32 +1,44 @@
 const todolistService = require('../services/todolistService');
 
-const findTodolistController = (req, res) => {
-  const allItems = todolistService.findTodolistService();
+const mongoose = require('mongoose');
+
+const findTodolistController = async (req, res) => {
+  const allItems = await todolistService.findTodolistService();
   res.send(allItems);
 };
 
-const findTodolistByIdController = (req, res) => {
+const findTodolistByIdController = async (req, res) => {
   const idParam = req.params.id;
-  const chosenItems = todolistService.findTodolistByIdController(idParam);
+
+  const chosenItems = await todolistService.findTodolistByIdController(idParam);
+
   res.send(chosenItems);
 };
 
-const createTodolistController = (req, res) => {
+const createTodolistController = async (req, res) => {
   const item = req.body;
-  const newItem = todolistService.createTodolistService(item);
-  res.send(newItem);
+
+  const newItem = await todolistService.createTodolistService(item);
+  res.status(201).send(newItem);
 };
 
-const updateTodolistController = (req, res) => {
-  const idParam = Number(req.params.id);
-  const itemEdit = req.body;
-  const updateItem = todolistService.updateTodolistService(idParam, itemEdit);
-  res.send(updateItem);
-};
-
-const deleteTodolistController = (req, res) => {
+const updateTodolistController = async (req, res) => {
   const idParam = req.params.id;
-  todolistService.deleteTodolistService(idParam);
+  const itemEdit = req.body;
+
+  const updatedItem = await todolistService.updateTodolistService(
+    idParam,
+    itemEdit,
+  );
+
+  res.send(updatedItem);
+};
+
+const deleteTodolistController = async (req, res) => {
+  const idParam = req.params.id;
+
+  await todolistService.deleteTodolistService(idParam);
+
   res.send({ message: 'Item deletado com sucesso!' });
 };
 

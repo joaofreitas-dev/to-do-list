@@ -1,4 +1,4 @@
-const items = [
+/* const items = [
   {
     id: 1,
     tarefa: 'Estudar',
@@ -23,32 +23,34 @@ const items = [
     duracao: '1 hora e 30 minutos',
   },
 ];
+ */
 
-const findTodolistService = () => {
+const Item = require('../module/Item');
+const Items = require('../module/Item')
+
+
+const findTodolistService = async () => {
+  const items = await Items.find();
   return items;
 };
 
-const findTodolistByIdController = (id) => {
-  return items.find((item) => item.id == id);
+const findTodolistByIdController = async (id) => {
+  const item = await Items.findById(id);
+  return item;
 };
 
-const createTodolistService = (newItem) => {
-  const newId = items.length + 1;
-  newItem.id = newId;
-  items.push(newItem);
-  return newItem;
+const createTodolistService = async (newItem) => {
+  const itemAdd = await Item.create(newItem)
+  return itemAdd;
 };
 
-const updateTodolistService = (id, itemEdited) => {
-  itemEdited['id'] = id;
-  const itemIndex = items.findIndex((item) => item.id == id);
-  items[itemIndex] = itemEdited;
-  return itemEdited;
+const updateTodolistService = async (id, itemEdited) => {
+  const itemUpdated = await Item.findByIdAndUpdate(id, itemEdited)
+  return itemUpdated;
 };
 
-const deleteTodolistService = (id) => {
-  const itemIndex = items.findIndex((item) => item.id == id);
-  return items.splice(itemIndex, 1);
+const deleteTodolistService = async (id) => {
+  return await Item.findByIdAndDelete(id)
 };
 
 module.exports = {
